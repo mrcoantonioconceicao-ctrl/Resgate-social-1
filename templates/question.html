@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>Pergunta {{ index }} / {{ total }} <small class="text-muted">Nível: {{ level }}</small></h5>
+        <p class="lead">{{ question.text }}</p>
+        <form method="post" action="{{ url_for('answer') }}">
+          <div class="list-group">
+            {% for opt in question.options %}
+              <label class="list-group-item">
+                <input type="radio" name="option" value="{{ loop.index0 }}" required> {{ opt }}
+              </label>
+            {% endfor %}
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-success">Enviar resposta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="text-end"><small class="text-muted">Dica: responda com calma.</small></div>
+  </div>
+</div>
+{% endblock %}

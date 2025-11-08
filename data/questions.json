@@ -1,0 +1,50 @@
+{
+  "basico": [
+    {
+      "id": "b1",
+      "level": "basico",
+      "text": "Qual é o próximo número da sequência: 2, 4, 6, 8, ?",
+      "options": ["9", "10", "11", "12"],
+      "answer": 1
+    },
+    {
+      "id": "b2",
+      "level": "basico",
+      "text": "Se todos os gatos são mamíferos e Tom é um gato, Tom é...?",
+      "options": ["Réptil", "Ave", "Mamífero", "Peixe"],
+      "answer": 2
+    }
+  ],
+  "intermediario": [
+    {
+      "id": "m1",
+      "level": "intermediario",
+      "text": "Se hoje é terça-feira, que dia será daqui a 4 dias?",
+      "options": ["Sexta", "Sábado", "Domingo", "Quinta"],
+      "answer": 0
+    },
+    {
+      "id": "m2",
+      "level": "intermediario",
+      "text": "Qual número é resultado de 3 * (2 + 4) - 5?",
+      "options": ["13", "15", "11", "9"],
+      "answer": 0
+    }
+  ],
+  "avancado": [
+    {
+      "id": "a1",
+      "level": "avancado",
+      "text": "Se x é par e y é ímpar, qual das opções abaixo é sempre ímpar?",
+      "options": ["x+y", "x*y", "x-y", "x^2 + y^2"],
+      "answer": 0
+    },
+    {
+      "id": "a2",
+      "level": "avancado",
+      "text": "Complete: 2, 3, 5, 8, 13, ? (sequência de Fibonacci)",
+      "options": ["18", "20", "21", "22"],
+      "answer": 2
+    }
+  ]
+}

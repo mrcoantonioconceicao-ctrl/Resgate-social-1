@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title">Entrar - Agente de QI</h4>
+        <form method="post" novalidate>
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input required name="name" class="form-control" placeholder="Seu nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">PIN (4 dígitos)</label>
+            <input required name="pin" pattern="\\d{4}" maxlength="4" class="form-control" placeholder="1234">
+            <div class="form-text">PIN simples para identificação local.</div>
+          </div>
+          <button class="btn btn-primary">Iniciar Avaliação</button>
+        </form>
+      </div>
+    </div>
+    <div class="mt-3 text-muted small">
+      Projeto de exemplo — dados salvos localmente em data/results.json
+    </div>
+  </div>
+</div>
+{% endblock %}

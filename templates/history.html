@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <h4>Histórico - {{ user }}</h4>
+    <div class="card mb-3">
+      <div class="card-body">
+        <img src="{{ url_for('history_plot') }}" class="img-fluid" alt="Gráfico de evolução">
+      </div>
+    </div>
+    <div>
+      {% if history %}
+        <ul class="list-group">
+          {% for e in history|reverse %}
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <strong>{{ e.date }}</strong><br>
+                  Pontuação: {{ e.correct }} / {{ e.total }} — IQ: {{ e.iq }}
+                </div>
+                <div>
+                  <small>{{ e.suggestion }}</small>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="alert alert-info">Nenhum histórico ainda. Faça uma avaliação!</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4>Resultado - {{ user }}</h4>
+        <p><strong>Data:</strong> {{ entry.date }}</p>
+        <p><strong>Pontuação:</strong> {{ entry.correct }} / {{ entry.total }}</p>
+        <p><strong>IQ estimado:</strong> {{ entry.iq }}</p>
+        <p><strong>Sugestão:</strong> {{ entry.suggestion }}</p>
+        <a class="btn btn-primary" href="{{ url_for('export_pdf') }}">Exportar em PDF</a>
+        <a class="btn btn-secondary" href="{{ url_for('history') }}">Ver histórico</a>
+        <a class="btn btn-outline-dark" href="{{ url_for('start') }}">Refazer avaliação</a>
+      </div>
+    </div>
+    <div class="mt-3">
+      <h5>Detalhes das respostas</h5>
+      <ul class="list-group">
+        {% for a in entry.answers %}
+        <li class="list-group-item">
+          <strong>[{{ a.level }}]</strong> {{ a.text }} — <span class="badge {{ 'bg-success' if a.correct else 'bg-danger' }}">{{ 'Correto' if a.correct else 'Errado' }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
